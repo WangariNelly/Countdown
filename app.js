@@ -86,10 +86,12 @@ let days = t / oneDay;
   items.forEach( (item, index) => {
     item.innerHTML = format(values[index]);
   });
-
+// setting up incase date passed deadline
   if (t < 0) {
     clearInterval(countdown);
     deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired!</h4>`;
   }
+
+  //countdown
   let countdown = setInterval(getRemainingTime, 1000);
   getRemainingTime();
