@@ -21,3 +21,15 @@ const weekdays = [
   "Friday",
   "Saturday",
 ];
+
+//months indexed based.
+
+const giveAway = document.querySelector('.giveaway');
+const deadline = document.querySelector('.deadline');
+const items = document.querySelectorAll('.deadline-format h4');
+
+let tomorrowDate = new Date(2024,6,15,11,30); 
+//console.log(tomorrowDate);
+
+const year = tomorrowDate.getFullYear();
+
