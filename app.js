@@ -39,30 +39,28 @@ const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
 let tomorrowDate = new Date(2024,7,15,11,30); 
 // console.log(tomorrowDate);
 
-// const year = tomorrowDate.getFullYear();
-// const hours = tomorrowDate.getHours();
-// const minutes = tomorrowDate.getMinutes();
+const year = tomorrowDate.getFullYear();
+const hours = tomorrowDate.getHours();
+const minutes = tomorrowDate.getMinutes();
 
-// let month = tomorrowDate.getMonth();
-// month = months[month];
-// const weekday = weekdays[tomorrowDate.getDay()];
-// const date = tomorrowDate.getDate();
+let month = tomorrowDate.getMonth();
+month = months[month];
+const weekday = weekdays[tomorrowDate.getDay()];
+const date = tomorrowDate.getDate();
   
-// giveAway.textContent = `Giveaway ends on ${date} ${month} ${year} ${hours} ${minutes} `;
+giveAway.textContent = `Giveaway ends on ${date} ${month} ${year} ${hours} ${minutes}am`;
 
 
 
 //future date in milliseconds
 
 const futureTime = tomorrowDate.getTime()
-console.log(futureTime)
+// console.log(futureTime)
 
 function getRemainingTime(){
   const today = new Date().getTime();
   const t = futureTime - today;
-  console.log(t);
-}
- getRemainingTime();
+  // console.log(t);
 
 //logging the values in milliseconds;.
 const oneDay = 24 * 60 * 60 * 1000;
@@ -91,7 +89,7 @@ let days = t / oneDay;
     clearInterval(countdown);
     deadline.innerHTML = `<h4 class="expired">sorry, this giveaway has expired!</h4>`;
   }
-
+}
   //countdown
   let countdown = setInterval(getRemainingTime, 1000);
   getRemainingTime();
